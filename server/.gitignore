@@ -1,0 +1,29 @@
+# Node.js
+/node_modules
+
+# Fichiers de configuration
+.env
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de dépendance (générés par npm ou yarn)
+package-lock.json
+yarn.lock
+
+# Fichiers de build
+/build/
+
+# Fichiers de configuration spécifiques à l'IDE (par exemple, VS Code)
+.vscode/
+
+# Dossiers spécifiques à Sequelize
+/migrations/
+/seeders/
+/models/*.js

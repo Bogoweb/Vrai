@@ -1,0 +1,147 @@
+
+<html>
+    <head>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: screen;
+        }
+        footer{
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        .logo {
+            text-align: center;
+        }
+        .logo img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .cot-1 {
+            display:flex;
+            flex-direction:row;
+            width:60%;
+            font-size:12px;
+            margin-left: 25vw;
+        }
+
+        .pass{
+            font-size:10px;
+            flex: 1;
+            width: auto;
+            display: inline-block;
+            background-color: #ECECEA;
+            width: 40vw;
+            padding-left: 15px;
+        }
+        .user {
+            font-size:10px;
+            flex: 1;
+            width: auto;
+            display: inline-block;
+            background-color: #ECECEA;
+            margin-left: 50px;
+            width: 40vw;
+            padding-left: 15px;
+        }
+
+        .cot-2{
+            font-size:10px;
+            text-align: center;
+        }
+        .cot-3{
+            position:relative;
+            margin-top:15px;
+            margin-bottom: 15px;
+            padding:5px;
+            left:30vw;
+            font-size:9px;
+            margin-left:10px;
+            padding-left:20px;
+            background-color:#ECECEA;
+            width:50%;
+            
+
+        }
+        .cot-4{
+            left:5px;
+            text-align:center;
+            font-size:9px;
+
+        }
+        .cot-5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size:6px;
+        }
+        .cot-5 .rouge{
+            color:red;
+
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="https://www.activites-noel.fr/accueil/banniere.png" alt="Activite-noel">
+        </div>
+        <span class="cot-1">
+            <span class="pass">
+                <p>Pass n° : ${code}<p>
+                <p>Valable jusqu'au: 30 juin 2025</p>
+            </span>
+            <span class="user">
+                <p>${participation.firstname}</p>
+                <p>${participation.nom}</p>
+            </span>
+        </span>
+        <span class="cot-2">
+            <p>Félicitations ${participation.firstname} !</p>
+            <p>Vous avez participé à l’opération DISNEY x CDISCOUNT et vous avez choisi une activité de loisir.<br>
+            Pour profiter d’une entrée parent-enfant dans l’établissement sélectionné, suivez les informations <br>
+            du partenaire ci-dessous.</p>
+            <p><b>Ce pass est valable 1 fois jusqu’au 30 juin 2025, sauf fermeture annuelle ou exceptionnelle.</b></p> 
+        </span>
+        <div class="cot-3">
+            <h4>Coordonnées du partenaire :</h4>
+            <p>${partenaire.nom}</p>
+            <p>${partenaire.type}</p>
+            <p>${partenaire.cp} - ${partenaire.ville}</p>
+            <p>${partenaire.mail}</p>
+            <p>${partenaire.telephone}</p>
+            <p>${partenaire.site}</p>
+            <p>${partenaire.description}</p>
+        </div>
+        <span class="cot-4"> 
+            <p><b>Ce pass est nominatif et unique, en aucun cas il ne pourra être réémis (perte, vol…).<br>
+            Il est valable uniquement pour la personne dont le nom et le prénom figurent en haut de ce pass<br>
+            et pour l’établissement dont les coordonnées sont indiquées</b></p>
+        </span>
+    </body>
+    <footer>
+      <span class="cot-5">
+        <p>Offre réservée aux particuliers, non cumulable avec d’autres offres promotionnelles ou tarif privilégié (y compris tarif Comité d’Entreprise)
+        en cours dans les établissements partenaires. Un pass maximum par famille ou groupe de visiteurs lors du passage en caisse chez le partenaire.
+        Vous avez jusqu’au 30 juin 2025 pour vous rendre chez le partenaire dont les coordonnées figurent ci-dessus ; sauf fermeture annuelle ou exceptionnelle de l’établissement.
+        Tout pass illisible, incomplet ou photocopié sera considéré comme nul.
+        Ce pass ne peut être obtenu ou distribué en dehors du site <span style="color: black;">activites-noel.fr</span>. Pour  obtenir des conseils ou connaitre les conditions particulières de certains
+        établissements contactez la société organisatrice de l’opération par mail à <span style="color: black;">contact@activites-noel.fr</span>.
+        Une réponse vous sera apportée sous 96 heures ouvrées. Les données personnelles collectées dans ce pass d’échange ne
+        seront conservées que pour une durée strictement nécessaire aux finalités pour lesquelles elles sont collectées, à savoir pour une période maximum de
+        trois (3) semaines après la fin de validité du pass et seront ensuite détruites. La participation est réservée aux clients CDISCOUNT, ayant reçu un pass et
+        participé dans les dates de l’offre. Le pass ne peut être remboursé et aucun pass d’échange ne sera remplacé s’il est perdu, supprimé, volé ou endommagé.
+        La société organisatrice ne saurait être tenue pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass.<br><br>
+        Conformément au Règlement général sur la protection des données n°2016/679 et à la loi dite « Informatique et libertés » du 6 janvier 1978 dans sa
+        dernière version, chaque participant dispose d’un droit d’accès, de rectification, d’effacement des données à caractère personnel qui le concernent, d’un
+        droit à la limitation du traitement, d’un droit d’opposition pour motifs légitimes, d’un droit à la portabilité des données et du droit de définir des directives
+        relatives à la conservation, à l'effacement et à la communication des données à caractère personnel après son décès. Le Participant peut exercer ces droits
+        par e-mail à l’adresse suivante: <span style="color: black;">dpo@savencia.com ou sur simple demande écrite à CF&R, Service qualité, BP 80085, 14503 Vire Cedex, France.</span>
+        Un justificatif d’identité pourra lui être demandé. L’exercice d’un de ces droits peut être refusé au Participant si sa demande ne remplit pas les conditions
+        posées par la réglementation. Dans cette hypothèse, le Participant en sera dûment informé.
+        <br>
+        En cas de réclamation, le Participant dispose du droit de saisir la CNIL à l’adresse suivante :<span style="color: black;"> 7-19 quai du président Paul Doumer CS60151–92672 Courbevoie Cedex–France</span></p>
+      </span>
+    </footer>
+</html>
+   
