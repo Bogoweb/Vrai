@@ -133,7 +133,6 @@ const Accueil = () => {
   const partenaireaddresseHandler = (e:any) => {
     setpartenaireaddresse(e.target.value);
 }
-
 const customStyles = {
   control: (provided: any, state: any) => ({
     ...provided,
@@ -301,27 +300,14 @@ const addParticipationHandler = async () => {
 
 console.log('Local Storage:', localStorage.userCode);
 return (
-  <div className=' text-white font-font-Arial'>
-    <div>
-        <img src="/accueil/bogocdiscount.png" alt="logo cdiscount et bogo" className="mx-auto p-3"/>
-    </div>
-    <div className='relative -mb-14'>
-        <img src="/accueil/banniere.png" alt="banniere" className='w-full'/>
-    </div>
-    <div className="bg-[#081A49] rounded-3xl shadow-lg shadow-black m-4 p-2 md:p-10 md:m-10 md:mx-20 text-center">
-        <img src="/accueil/operation.png" alt="Operation" className=" mt-12 mb-4 mx-auto"/>
-        <h1 className="text-xl md:text-5xl font-bold py-4">COMMENT ÇA MARCHE ?</h1>
-        <ol className="space-y-1 mt-4 text-sm md:text-lg md:mx-auto md:w-[870px] md:text-wrap">
-          <li>1. Sélectionnez une région sur la carte de France pour accéder aux partenaires.</li>
-          <li>2. Remplissez le formulaire ci-dessous (nom, prénom, adresse mail, nom du partenaire, adresse postale du partenaire, preuve d’achat**).</li>
-          <li>3. Après modération, si votre participation est conforme, vous recevrez votre pass activité par mail et les informations nécessaires pour accéder à votre activité offerte.</li>
-        </ol>
-    </div>
+  <div className=' text-white font-font-Arial'> 
+        <img src="/accueil/comment-ça-marche.png" alt="Operation" className=" mt-12 mb-4 mx-auto"/>
     <div className="bg-[#081A49] rounded-3xl shadow-lg shadow-black mx-4 md:p-10 md:mx-20 md:m-10 text-center">
-        <p className='text-center text-xl md:text-3xl font-bold mb-8'>
-          Découvrez les activités des partenaires sur la carte de France
-        </p>
-        <div className='flex-grow md:flex md:h-screen'>
+    <p className="text-center text-xl md:text-3xl font-bold mb-8">
+    Découvrez les activités <span className="text-yellow-300">sur la carte de France des partenaires</span>
+    </p>
+
+        <div className='flex-grow md:flex md:flex-row md:h-screen justify-start'>
           <div className="flex-1 basis-full mx-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -491,162 +477,24 @@ return (
           </div>
         </div>
       </div>
-      <div  className="flex flex-col md:flex-row w-full items-center">
-        <div className="relative flex flex-col basis-full md:basis-1/2 mt-5"> 
-          <img className='hidden md:block md:absolute -top-96 left-4 w-96 h-96' src='./accueil/enfant.png' alt='Enfants forêt'/>
-          <img className='hidden md:block md:absolute -bottom-96 right-4 w-96 h-96' src='./accueil/lasergame.png' alt='Lasergame'/>
-        </div>
-        <section id='Formulaire' className='flex flex-col basis-full md:basis-1/2 mt-5'>
-            <form className="flex flex-col basis-full md:basis-1/2 mt-5 p-6 md:p-10 bg-[#081A49] rounded-3xl shadow-lg shadow-black mx-4">
-              <p className='text-center font-bold text-3xl mb-4'> FORMULAIRE DE PARTICIPATION </p>
-              <div className="flex flex-col md:flex-row text-left">
-                  <div className="flex flex-col w-full md:mr-5">
-                      <label htmlFor="nom" className="text-white font-medium">
-                        Nom*
-                      </label>
-                      <input
-                          id='nom'
-                          type="text"
-                          name="name"
-                          value={name}
-                          onChange={handleNameChange}
-                          onBlur={validateName}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                      />
-                      <label htmlFor="prenom" className="text-white font-medium">
-                        Prénom*
-                      </label>
-                      <input
-                          id='prenom'
-                          type="text"
-                          name="firstname"
-                          value={firstname}
-                          onChange={handleFirstnameChange}
-                          onBlur={validateFirstname}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                      />
-                      <label htmlFor="email" className="text-white font-medium">
-                        Mail*
-                      </label>
-                      <input
-                          id='email'
-                          type="email"
-                          name="email"
-                          value={email}
-                          onChange={emailHandler}
-                          onBlur={validateEmail}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                      />
-                      <label htmlFor="PartenaireName" className="text-white font-medium">
-                        Nom du partenaire*
-                      </label>
-                      <input
-                          id='PartenaireName'
-                          name="PartenaireName"
-                          value={partenairename}
-                          onChange={partenairenameHandler}
-                          onBlur={validateName}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                          disabled
-                      />
-                      <label htmlFor="PartenaireAddresse" className="text-white font-medium">
-                        Addresse postale du partenaire
-                      </label>
-                      <input
-                          id='PartenaireAddresse'
-                          name="PartenaireAddresse"
-                          value={partenaireaddresse}
-                          onChange={partenaireaddresseHandler}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          disabled
-                      />
-                      <label htmlFor="PartenaireCodePostale" className="text-white font-medium">
-                        Code postale du partenaire*
-                      </label>
-                      <input
-                          id='PartenaireCodePostale'
-                          type="text"
-                          name="PartenaireCodePostale"
-                          value={partenairecp}
-                          onChange={partenairecpHandler}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                          disabled
-                      />
-                      <label htmlFor="Ville" className="text-white font-medium">
-                        Ville du partenaire*
-                      </label>
-                      <input
-                          id='Ville'
-                          type="text"
-                          name="Ville"
-                          value={partenaireville}
-                          onChange={handleVilleChange}
-                          className="bg-white mb-2 p-2 border rounded-full text-[#081A49]"
-                          required
-                          disabled
-                      />
-                      <div className="py-6">
-                          Preuve d'achat (jpg, gif, pdf, png max 10Mo)*
-                          <br></br>
-                            <label htmlFor="file-upload" className="flex w-fit cursor-pointer px-1.5 py-0.5 bg-white text-gray-500 items-center">
-                                <span className="truncate max-w-[150px] md:max-w-[300px] text-[13px]">
-                                    {uploadedFile ? uploadedFile.name : "Choisir un fichier"}
-                                </span>
-                            </label>
-                            <input
-                                id="file-upload"
-                                type="file"
-                                accept=".png, .jpg, .jpeg, .gif, .pdf"
-                                onChange={handleFileChange}
-                                style={{ display: 'none' }}
-                                required
-                            />
-                      </div>
+    <div className="text-white p-6 text-xl font-bold flex justify-center space-x-8">
+  <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
+    MODALITÉS
+  </a>
+  <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
+    RÈGLEMENT DU JEU
+  </a>
+  <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
+    POLITIQUE DE CONFIDENTIALTÉ
+  </a>
+  <a href="MENTIONS LEGALES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
+    MENTIONS LÉGALES
+  </a>
+  <a href="mailto:contact@activites-noel.fr" className="hover:underline" target="_blank" rel="noopener noreferrer">
+    CONTACT
+  </a>
+</div>
 
-                      <p className='text-sm mb-4'>
-                          *champs obligatoires
-                      </p>
-
-                      <div className="flex w-full">
-                          <button
-                              type="button"
-                              className="bg-white text-[#081A49] p-1 text-2xl font-bold rounded-full hover:rgb(28,48,89) w-full"
-                              onClick={addParticipationHandler}
-                          >
-                              VALIDER
-                          </button>
-                      </div>
-                  </div>
-              </div>
-            </form>
-            <div className='py-8 px-5 text-sm md:text-base text-balance'>
-                <p>
-                    *Pour l'achat d'un produit Disney, Pixar, Marvel et/ou Star Wars sur CDISCOUNT.fr une activité valable pour 
-                    1 adulte et 1 enfant offerte.<br></br>
-                    **Ticket de caisse, facture, sur laquelle le produit éligible et la date sont lisibles.
-                </p>
-            </div>
-        </section>
-        <div className="flex-col hidden md:block basis-full md:basis-1/2 mt-5">
-            <img className='w-96 h-96 m-auto' src='./accueil/chateau.png' alt='chateau'/>
-        </div>
-    </div>
-    <div className='flex'>
-        <img className='mx-auto mt-3' src='./accueil/bogo.png' alt='logo bogo'/>
-    </div>
-    <div className='flex'>
-        <p className='text-center mx-auto'>©Disney. ©Disney/Pixar.<br/>© & ™ Lucasfilm Ltd. © 2024 MARVEL</p>
-    </div>
-    <div className="text-white p-6 text-xl font-bold flex flex-col md:flex-row justify-center md:justify-between md:mx-96">
-        <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline mx-auto" target="_blank" rel="noopener noreferrer">Modalités</a>
-        <a href="MENTIONS LEGALES - DISNEY x CDISCOUNT.pdf" className="hover:underline mx-auto" target="_blank" rel="noopener noreferrer">Mentions légales</a>
-        <a href="mailto:contact@activites-noel.fr" className="hover:underline mx-auto" target="_blank" rel="noopener noreferrer">Contact</a>
-    </div>
   </div>
 );};
 
