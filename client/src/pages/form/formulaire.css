@@ -1,0 +1,115 @@
+.radio {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    /*
+  background-color: var(--form-background);
+  */
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.05em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+.radio::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em green;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+.radio:checked::before {
+    transform: scale(1);
+}
+/*
+.radio:focus {
+    outline: min(1px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+*/
+
+.input {
+    appearance: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+
+/*
+ * File
+ */
+
+.file {
+    position: relative;
+    display: inline-block;
+    
+    height: 2.5rem;
+}
+
+.file input {
+    min-width: 14rem;
+    margin: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-custom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: 2.5rem;
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    background-color: #fff;
+    border: .075rem solid #ddd;
+    border-radius: .25rem;
+    box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, .05);
+    user-select: none;
+}
+/*
+.file-custom:after {
+    content: "Téléchargez votre Ticket de caisse*";
+}
+*/
+.file-custom:before {
+    position: absolute;
+    top: -.075rem;
+    right: -.075rem;
+    bottom: -.075rem;
+    z-index: 6;
+    display: block;
+    content: "Browse";
+    height: 2.5rem;
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    background-color: #eee;
+    border: .075rem solid #ddd;
+    border-radius: 0 .25rem .25rem 0;
+}
+
+/* Focus */
+.file input:focus~.file-custom {
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
