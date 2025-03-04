@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Select, { SingleValue } from 'react-select';
 import { useNavigate } from 'react-router-dom';
-import Link from 'react-csv/components/Link';
 
 const api = require('../../apis/api');
 
@@ -308,31 +307,45 @@ return (
     backgroundPosition: "top center"
   }}>
    <div className="relative z-10  text-white font-font-Arial">
-   <div className="flex justify-center items-center min-h-screen mt-[-80px]">
-  <div className="flex space-x-8 w-full max-w-[600px]"> 
+    <div className='mt-80'>
+   <div className="flex flex-col justify-center items-center h-[80vh] mt-2 space-y-4">
   <button 
-  onClick={() => window.location.href = "/form"} 
-  className="bg-white text-black px-6 py-2 rounded-lg text-lg hover:bg-yellow-600 transition duration-300 w-full">
-  Comment ça marche?
+    onClick={() => window.location.href = "/form"} 
+    className="bg-white text-green-500 px-6 py-0.5 rounded-2xl text-sm hover:bg-yellow-600 transition duration-300 w-auto min-w-[150px] max-w-[200px] text-center">
+    JE PARTICIPE
   </button>
-  <button className="bg-white text-black px-6 py-2 rounded-lg text-lg hover:bg-yellow-600 transition duration-300 w-full">
-      Je participe
-  </button>
+  <img 
+    src="/accueil/fond_comment_ça_marche.png" 
+    alt="Comment ça marche" 
+    className="w-auto max-w-[850px] sm:max-w-[800px] md:max-w-[700px] h-auto"
+  />
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-500 text-xs sm:text-sm md:text-base font-bold text-center px-2">
+  <p className="whitespace-normal">{`Comment ça marche ?`}</p>
+  <div className="flex items-center pl-6">
+    <img src="/accueil/1.png" alt="Icon 1" className="w-6 h-6 mr-2" />
+    <p className="whitespace-normal">{`Choisissez votre activité sur la carte de France ci-dessous`}</p>
+  </div>
+  <div className="flex items-center pl-6">
+    <img src="/accueil/2.png" alt="Icon 2" className="w-6 h-6 mr-2" />
+    <p className="whitespace-normal">{`Remplissez le formulaire et téléchargez votre preuve d'achat`}</p>
+  </div>
+  <div className="flex items-center pl-6">
+    <img src="/accueil/3.png" alt="Icon 3" className="w-6 h-6 mr-2" />
+    <p className="whitespace-normal">{`Si votre preuve d'achat est validée, vous recevrez un e-mail de confirmation avec un pass pour l'activité nature offerte que vous avez sélectionnée. Vous serez automatiquement inscrit au tirage au sort pour tenter de gagner 1 vélo électrique et de nombreux autres cadeaux`}</p>
+  </div>
+  <div className="flex items-center pl-6">
+    <img src="/accueil/4.png" alt="Icon 5" className="w-6 h-6 mr-2" />
+    <p className="whitespace-normal">{`Rendez-vous chez le partenaire avec ces documents pass et preuve d'achat des produits vrais pour profiter de votre activité offerte`}</p>
+  </div>
+  <div className="flex items-center pl-6">
+    <img src="/accueil/5.png" alt="Icon 6" className="w-6 h-6 mr-2" />
+    <p className="whitespace-normal">{`Nous vous contacterons par mail à la fin du jeu, pour vous annoncer si vous faites partie des heureux gagnants du tirage au sort`}</p>
   </div>
 </div>
-   {/* <div className="flex justify-center absolute top-1/2 transform -translate-y-1/2 w-full mt-40">
-        <img 
-          src="/accueil/comment-ça-marche.png" 
-          alt="Livre" 
-          className="w-full sm:w-auto max-w-[500px] h-auto" 
-        />
-   </div> */}
-  {/* <div className="flex justify-center mt-16 px-4 md:px-0 mt-40">
-        <img src="/accueil/comment-ça-marche.png" alt="Operation" className="w-auto max-w-full"/>  </div> */}
-   {/* <p className="text-center text-xl md:text-3xl font-bold mb-8 mt-8">
-    Découvrez les activités <span className="text-yellow-300">sur la carte de France des partenaires</span>
-    </p> */}
-
+  <div className="text-white text-center px-4 md:px-0">
+    <p>Découvrez les activités <br /> sur la carte de France des partenaires</p>
+  </div>
+</div>
         <div className='flex-grow md:flex md:flex-row md:h-screen justify-start'>
        {/* <div className="flex-1 basis-1/2 max-w-[500px] h-[300px] max-h-[400px] mx-auto">
             <svg
@@ -502,6 +515,7 @@ return (
             </ul>
           </div> */}
         </div>
+      </div>
       </div>
     {/* <div className="text-white p-6 text-xl font-bold flex justify-center space-x-8">
   <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
