@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select, { SingleValue } from 'react-select';
 import { useNavigate } from 'react-router-dom';
+import Link from 'react-csv/components/Link';
 
 const api = require('../../apis/api');
 
@@ -300,15 +301,40 @@ const addParticipationHandler = async () => {
 
 console.log('Local Storage:', localStorage.userCode);
 return (
-  <div className=' text-white font-font-Arial'> 
-        <img src="/accueil/comment-ça-marche.png" alt="Operation" className=" mt-12 mb-4 mx-auto"/>
-    <div className="bg-[#081A49] rounded-3xl shadow-lg shadow-black mx-4 md:p-10 md:mx-20 md:m-10 text-center">
-    <p className="text-center text-xl md:text-3xl font-bold mb-8">
+  <div className="absolute inset-0 z-0 bg-cover bg-center" 
+  style={{ 
+    backgroundImage: "url('http://localhost:3000/accueil/fond.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "top center"
+  }}>
+   <div className="relative z-10  text-white font-font-Arial">
+   <div className="flex justify-center items-center min-h-screen mt-[-80px]">
+  <div className="flex space-x-8 w-full max-w-[600px]"> 
+  <button 
+  onClick={() => window.location.href = "/form"} 
+  className="bg-white text-black px-6 py-2 rounded-lg text-lg hover:bg-yellow-600 transition duration-300 w-full">
+  Comment ça marche?
+  </button>
+  <button className="bg-white text-black px-6 py-2 rounded-lg text-lg hover:bg-yellow-600 transition duration-300 w-full">
+      Je participe
+  </button>
+  </div>
+</div>
+   {/* <div className="flex justify-center absolute top-1/2 transform -translate-y-1/2 w-full mt-40">
+        <img 
+          src="/accueil/comment-ça-marche.png" 
+          alt="Livre" 
+          className="w-full sm:w-auto max-w-[500px] h-auto" 
+        />
+   </div> */}
+  {/* <div className="flex justify-center mt-16 px-4 md:px-0 mt-40">
+        <img src="/accueil/comment-ça-marche.png" alt="Operation" className="w-auto max-w-full"/>  </div> */}
+   {/* <p className="text-center text-xl md:text-3xl font-bold mb-8 mt-8">
     Découvrez les activités <span className="text-yellow-300">sur la carte de France des partenaires</span>
-    </p>
+    </p> */}
 
         <div className='flex-grow md:flex md:flex-row md:h-screen justify-start'>
-          <div className="flex-1 basis-full mx-1">
+       {/* <div className="flex-1 basis-1/2 max-w-[500px] h-[300px] max-h-[400px] mx-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -413,8 +439,8 @@ return (
 
               </a>
             </svg>
-          </div>
-          <div className="flex flex-col mx-6 md:mx-10 basis-full rounded-3xl border-2 border-white max-h-screen">
+          </div>  */}
+          {/*<div className="flex flex-col mx-6 md:mx-10 basis-full rounded-3xl border-2 border-white max-h-screen">
             <Select
               className='mt-3 ml-3 md:ml-8'
               value={selectedOption}
@@ -474,10 +500,10 @@ return (
                 </div>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
-    <div className="text-white p-6 text-xl font-bold flex justify-center space-x-8">
+    {/* <div className="text-white p-6 text-xl font-bold flex justify-center space-x-8">
   <a href="MODALITES - DISNEY x CDISCOUNT.pdf" className="hover:underline" target="_blank" rel="noopener noreferrer">
     MODALITÉS
   </a>
@@ -493,8 +519,7 @@ return (
   <a href="mailto:contact@activites-noel.fr" className="hover:underline" target="_blank" rel="noopener noreferrer">
     CONTACT
   </a>
-</div>
-
+</div> */}
   </div>
 );};
 

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 
 import Accueil from './pages/accueil/accueil'
+import Form from './pages/form/formulaire';
 import Merci from './pages/merci/merci';
 import Admin from './pages/admin/admin';
 import BackofficeLogin from './pages/login/login';
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<BackofficeLogin onLogin={handleLogin} />} />
         <Route path="/" element={<div className="App bg-[#081A49] font-font-Arial"><Accueil /></div>} />
+        <Route path="/form" element={<Form />} />
         <Route path="/merci" element={<Merci />} />
         <Route
           path="/admin"
